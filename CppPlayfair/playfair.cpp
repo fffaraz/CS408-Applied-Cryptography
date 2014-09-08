@@ -45,6 +45,8 @@ string Playfair::sanitizeText(string t)
     for(unsigned int i = 0; i< t.size(); i++)
         if(t[i] == 'j')
             t[i] = 'i';
+    // TODO: two same chars
+    // TODO: odd number of chars
     return t;
 }
 
