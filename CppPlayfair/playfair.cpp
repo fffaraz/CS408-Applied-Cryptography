@@ -6,6 +6,8 @@ Playfair::Playfair(string key)
     if(key.size() < 1 || key.size() > 10)
         validKey = false;
     // TODO: other checks
+    // toLower
+    // bad chars
     if(!validKey) return;
 
     string alphabet = "abcdefghiklmnopqrstuvwxyz";
@@ -62,6 +64,8 @@ string Playfair::encrypt(string plainText)
         vec2 a = findChar(plainText[i]);
         vec2 b = findChar(plainText[i + 1]);
 
+        // TODO: skip non-alphabeics
+
         encvec(a, b);
 
         plainText[i]   = matrix[a.x][a.y];
@@ -76,6 +80,8 @@ string Playfair::decrypt(string cipherText)
     {
         vec2 a = findChar(cipherText[i]);
         vec2 b = findChar(cipherText[i + 1]);
+
+        // TODO: skip non-alphabeics
 
         decvec(a, b);
 
