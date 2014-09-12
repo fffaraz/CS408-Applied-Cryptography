@@ -49,10 +49,15 @@ string Playfair::sanitizeText(string t)
     for(unsigned int i = 0; i < t.size() - 1; i += 2)
     {
         if(t[i] == t[i+1])
-            t.insert(i, 'x');
+            t.insert(i, "x");
 
     }
-    // TODO: odd number of chars
+
+    if(t.size() % 2 == 1)
+        t.append("x");
+
+    std::transform(t.begin(), t.end(), t.begin(), ::tolower);
+
     return t;
 }
 
@@ -67,6 +72,7 @@ vec2 Playfair::findChar(char c)
 
 string Playfair::encrypt(string plainText)
 {
+    plainText = sanitizeText(plainText);
     for(unsigned int i = 0; i < plainText.size() - 1; i += 2)
     {
         vec2 a = findChar(plainText[i]);
