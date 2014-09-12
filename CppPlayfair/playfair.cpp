@@ -42,10 +42,16 @@ string Playfair::sanitizeKey(string k)
 
 string Playfair::sanitizeText(string t)
 {
-    for(unsigned int i = 0; i< t.size(); i++)
+    for(unsigned int i = 0; i < t.size(); i++)
         if(t[i] == 'j')
             t[i] = 'i';
-    // TODO: two same chars
+
+    for(unsigned int i = 0; i < t.size() - 1; i += 2)
+    {
+        if(t[i] == t[i+1])
+            t.insert(i, 'x');
+
+    }
     // TODO: odd number of chars
     return t;
 }
