@@ -1,3 +1,10 @@
+// Faraz Fallahi
+// Sep. 18
+// TA: praveeng@siu.edu
+// Subj. CS408 Lab+Faraz
+// TR 12:30-2:00pm - Sep. 25
+
+
 #include <iostream>
 #include <string>
 #include <fstream>
