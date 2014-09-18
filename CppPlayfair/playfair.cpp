@@ -94,8 +94,8 @@ string Playfair::encrypt(string plainText)
 
         encvec(a, b);
 
-        plainText[c1] = matrix[a.x][a.y];
-        plainText[c2] = matrix[b.x][b.y];
+        plainText[c2] = matrix[a.x][a.y];
+        plainText[c1] = matrix[b.x][b.y];
     }
     return plainText;
 }
@@ -115,8 +115,8 @@ string Playfair::decrypt(string cipherText)
 
         decvec(a, b);
 
-        cipherText[c1] = matrix[a.x][a.y];
-        cipherText[c2] = matrix[b.x][b.y];
+        cipherText[c2] = matrix[a.x][a.y];
+        cipherText[c1] = matrix[b.x][b.y];
     }
     return cipherText;
 }
