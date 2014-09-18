@@ -85,15 +85,17 @@ string Playfair::encrypt(string plainText)
     for(unsigned int i = 0; i < plainText.size() - 1; i += 2)
     {
         while(plainText[i] < 'a' || plainText[i] > 'z') i++;
-        vec2 a = findChar(plainText[i]);
+        int c1 = i;
+        vec2 a = findChar(plainText[c1]);
 
         while(plainText[i + 1] < 'a' || plainText[i + 1] > 'z') i++;
-        vec2 b = findChar(plainText[i + 1]);
+        int c2 = i + 1;
+        vec2 b = findChar(plainText[c2]);
 
         encvec(a, b);
 
-        plainText[i]   = matrix[a.x][a.y];
-        plainText[i+1] = matrix[b.x][b.y];
+        plainText[c1] = matrix[a.x][a.y];
+        plainText[c2] = matrix[b.x][b.y];
     }
     return plainText;
 }
@@ -104,15 +106,17 @@ string Playfair::decrypt(string cipherText)
     for(unsigned int i = 0; i < cipherText.size() - 1; i += 2)
     {
         while(cipherText[i] < 'a' || cipherText[i] > 'z') i++;
-        vec2 a = findChar(cipherText[i]);
+        int c1 = i;
+        vec2 a = findChar(cipherText[c1]);
 
         while(cipherText[i + 1] < 'a' || cipherText[i + 1] > 'z') i++;
-        vec2 b = findChar(cipherText[i + 1]);
+        int c2 = i + 1;
+        vec2 b = findChar(cipherText[c2]);
 
         decvec(a, b);
 
-        cipherText[i]   = matrix[a.x][a.y];
-        cipherText[i+1] = matrix[b.x][b.y];
+        cipherText[c1] = matrix[a.x][a.y];
+        cipherText[c2] = matrix[b.x][b.y];
     }
     return cipherText;
 }

@@ -56,17 +56,20 @@ int main(int argc, char *argv[])
 
     if(enc_dec == "-e")
     {
-        cout << "Encrypting \"" << file << "\" using the key \"" << key << "\" ..." << endl;
+        cout << "Encrypting \"" << file << "\" using the key \"" << key << "\" ..." << endl << endl;
         output_file = file + ".enc";
-        input >> buffer;
-        output_str += pf.encrypt(buffer);
+        char buf[1024];
+        input.getline(buf, 1024);
+        cout  << buf;
+        output_str += pf.encrypt(buf);
     }
 
     if(enc_dec == "-d")
     {
-        cout << "Decrypting \"" << file << "\" using the key \"" << key << "\" ..." << endl;
+        cout << "Decrypting \"" << file << "\" using the key \"" << key << "\" ..." << endl << endl;
         output_file = file + ".dec";
         input >> buffer;
+        cout  << buffer;
         output_str += pf.decrypt(buffer);
     }
 
@@ -74,6 +77,7 @@ int main(int argc, char *argv[])
 
     ofstream output(output_file);
     output << output_str;
+    cout << endl << output_str << endl << endl;
     output.flush();
     output.close();
 
