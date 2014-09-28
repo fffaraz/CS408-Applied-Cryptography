@@ -1,5 +1,5 @@
 #include "hillcipher.h"
 
-HillCipher::HillCipher()
+HillCipher::HillCipher(string key)
 {
 }
