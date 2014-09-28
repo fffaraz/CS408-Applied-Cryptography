@@ -1,8 +1,5 @@
-CppPlayfair
+CS 408 Applied Cryptography
 ===========
 
-Playfair Cipher in C++
+Lab assignments Applied Cryptography course
 
-Applied Cryptography course
-
-Lab assignment 1
