@@ -64,9 +64,12 @@ int main(int argc, char *argv[])
     {
         cout << "Decrypting \"" << file << "\" using the key \"" << key << "\" ..." << endl << endl;
         output_file = file + ".dec";
-        input >> buffer;
-        cout  << buffer;
-        output_str += hc.decrypt(buffer);
+        //input >> buffer;
+        //cout  << buffer;
+        char buf[1024];
+        input.getline(buf, 1024);
+        cout  << buf;
+        output_str += hc.decrypt(buf);
     }
 
     input.close();
