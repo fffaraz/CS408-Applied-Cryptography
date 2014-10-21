@@ -6,6 +6,7 @@
 #include <fstream>
 
 #include "hillcipher.h"
+#include "hillcipher3.h"
 
 using namespace std;
 
@@ -39,7 +40,9 @@ int main(int argc, char *argv[])
         return 3;
     }
 
-    HillCipher hc(key);
+    //HillCipher hc(key);
+    HillCipher3 hc(key);
+
     if(!hc.isValid())
     {
         cout << "Invalid key." << endl;

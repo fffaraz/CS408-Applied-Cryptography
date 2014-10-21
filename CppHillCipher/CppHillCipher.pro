@@ -7,8 +7,10 @@ CONFIG += c++11
 QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += main.cpp \
-    hillcipher.cpp
+    hillcipher.cpp \
+    hillcipher3.cpp
 
 HEADERS += \
-    hillcipher.h
+    hillcipher.h \
+    hillcipher3.h
 
